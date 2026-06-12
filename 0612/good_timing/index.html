@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Timing | 헬스장 포화도</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel" aria-labelledby="page-title">
+        <div class="topbar">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">GT</span>
+            <span>Good Timing</span>
+          </div>
+          <div class="live-pill">
+            <span class="pulse" aria-hidden="true"></span>
+            실시간 더미 데이터
+          </div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="intro">
+            <p class="eyebrow">입장 인증 기반 혼잡도</p>
+            <h1 id="page-title">지금 운동하러 가도 괜찮을까?</h1>
+            <p class="lede">
+              출입 인증 번호 카운트를 더미 데이터로 시각화한 한 화면 대시보드입니다.
+              현재 인원, 포화도, 시간대별 몰림, 추천 방문 시간을 빠르게 확인합니다.
+            </p>
+          </div>
+
+          <article class="status-card" aria-label="현재 헬스장 포화도">
+            <div class="status-copy">
+              <span class="metric-label">현재 입장 인원</span>
+              <strong id="currentCount">0</strong>
+              <span id="capacityText">정원 대비 0%</span>
+            </div>
+            <div class="gauge" role="img" aria-label="현재 포화도">
+              <div class="gauge-ring" id="gaugeRing">
+                <span id="gaugeValue">0%</span>
+              </div>
+              <p id="statusText">집계 중</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="혼잡도 상세">
+        <article class="panel timeline-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">시간대별 이용자 수</p>
+              <h2>오늘의 포화도 흐름</h2>
+            </div>
+            <select id="timeFilter" aria-label="시간대 필터">
+              <option value="all">전체</option>
+              <option value="morning">오전</option>
+              <option value="afternoon">오후</option>
+              <option value="evening">저녁</option>
+            </select>
+          </div>
+          <div class="bar-chart" id="barChart" aria-label="시간대별 이용 인원 막대 그래프"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow">공간별 분포</p>
+              <h2>운동 구역 현황</h2>
+            </div>
+          </div>
+          <div class="zone-list" id="zoneList"></div>
+        </article>
+
+        <article class="panel recommendation">
+          <p class="eyebrow">추천</p>
+          <h2 id="bestTime">방문 추천 시간 계산 중</h2>
+          <p id="bestReason">
+            더미 출입 카운트를 기준으로 상대적으로 여유로운 시간대를 찾고 있습니다.
+          </p>
+          <div class="mini-stats">
+            <span><strong id="peakTime">-</strong> 가장 붐빔</span>
+            <span><strong id="quietTime">-</strong> 가장 여유</span>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
