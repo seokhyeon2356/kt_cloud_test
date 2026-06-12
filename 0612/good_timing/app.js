@@ -2,16 +2,19 @@ const capacity = 45;
 const peakCount = 36;
 
 const trafficMetadata = {
-  sourceName: "서울시 체육시설 공공서비스예약 정보",
-  sourceProvider: "서울특별시",
-  sourceUrl: "https://data.seoul.go.kr/dataList/OA-2266/S/1/datasetView.do?tab=A",
+  sourceName: "함안지방공사 운영 체육시설 현황",
+  sourceProvider: "함안지방공사",
+  sourceUrl: "https://www.data.go.kr/data/15010457/fileData.do",
   sourceMethod:
-    "서울시 및 산하기관, 자치구의 체육시설 예약정보를 제공하는 서울 열린데이터광장 공공데이터입니다.",
+    "함안체육관 및 칠원국민체육센터의 수영장, 헬스장, GX 프로그램 등 월별 이용객 수와 일평균 이용객 수를 제공하는 공공데이터포털 파일데이터입니다.",
   appliedMethod:
-    "정적 초안이므로 서울 API를 호출하지 않고, 서울시 체육시설 예약정보를 공식 참고 자료로 둔 소형-중형 헬스장 더미 혼잡도 시나리오입니다.",
-  sourceCategory: "문화/관광",
-  sourceOriginalSystem: "공공서비스예약",
-  sourceLicense: "공공누리 1유형: 출처표시",
+    "정적 초안이므로 공공데이터 파일을 호출하지 않고, 체육시설 헬스장 이용 현황 데이터를 참고 문서로 둔 소형-중형 헬스장 더미 혼잡도 시나리오입니다.",
+  sourceCategory: "문화체육관광 - 체육",
+  sourceFormat: "CSV",
+  sourceUpdateCycle: "연간",
+  sourceTimeRange: "2020년 1월 - 2025년 12월",
+  sourceColumnsUsedAsReference: ["헬스회원 방문", "헬스 일일 방문", "헬스 인원소계", "헬스 일평균 인원"],
+  sourceLicense: "이용허락범위 제한 없음",
   capacity,
   peakTime: "19:00",
   peakCount,
@@ -20,7 +23,7 @@ const trafficMetadata = {
   lastUpdated: "2026-06-12"
 };
 
-// 서울시 체육시설 예약정보를 공식 참고 자료로 둔 시간대별 더미 카운트입니다.
+// 공공 체육시설의 헬스장 이용 현황을 참고한 시간대별 더미 카운트입니다.
 const trafficData = [
   { time: "06:00", count: 7, relativeToPeak: 19, basis: "early-low" },
   { time: "07:00", count: 12, relativeToPeak: 33, basis: "morning-rise" },
